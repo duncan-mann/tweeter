@@ -1,15 +1,15 @@
 $(document).ready(function() {
   let tweets = document.getElementsByClassName('tweet');
   tweets = tweets[0];
-  console.log(tweets);
+  let user = $('<p>')
+  $(user).text('@notpeterparker');
+  $(user).addClass('userHandle');
 
   $('.tweet').hover( () => {
     $('.tweet').addClass('shadow');
-    console.log(tweets);
-  }, () => {
-    console.log('hover off')
+    $('.tweet').find('header').append(user);
+    }, () => {
     $('.tweet').removeClass('shadow');
-    console.log(tweets);
-
+    $(user).remove();
   })
 })

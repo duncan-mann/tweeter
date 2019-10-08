@@ -6,6 +6,8 @@ $(document).ready(function() {
     let counter = $(this).next().find('span');
     counter.text(140 - textAreaLength);
 
+    
+
     if (textAreaLength > 140) {
       counter.text('-' + (textAreaLength - 140));
       $(counter).css({

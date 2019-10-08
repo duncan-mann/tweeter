@@ -69,7 +69,7 @@ article {
 
 article.tweet header {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   margin-top: 0;
   height: 58px;
   background-image: none;
@@ -124,7 +124,13 @@ article.tweet footer div img {
 }
 
 .shadow {
-  box-shadow: 10px 10px rgb(80,27,29, .8);
+  box-shadow: 7px 7px rgb(80,27,29, .8);
+}
+
+article.tweet header p {
+  margin-top: 1.3em;
+  margin-right: 20px;
+  margin-left: auto;
 }
 
 
