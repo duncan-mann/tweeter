@@ -53,6 +53,7 @@ section h2 {
 
 section.new-tweet {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -60,6 +61,8 @@ article {
   display: flex;
   flex-direction: column;
   width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 20px;
   margin-bottom: 20px;
   height: 165px;
@@ -124,7 +127,7 @@ article.tweet footer div img {
 }
 
 .shadow {
-  box-shadow: 7px 7px rgb(80,27,29, .8);
+  box-shadow: 7px 7px #501b1dcc;
 }
 
 article.tweet header p {
