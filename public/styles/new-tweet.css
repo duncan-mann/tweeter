@@ -61,7 +61,7 @@ article {
   flex-direction: column;
   width: 90%;
   margin-top: 20px;
-  /* margin: auto; */
+  margin-bottom: 20px;
   height: 165px;
   border: 2px solid #545149;
   border-radius: 5px;
@@ -95,6 +95,7 @@ article.tweet p {
 article.tweet footer {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-self: flex-end;
   height: 50px;
   width: 95%;
@@ -116,13 +117,14 @@ article.tweet img {
   height: 40px;
 }
 
-article.tweet footer div {
-  align-self: flex-end;
-}
 
 article.tweet footer div img {
   height: 15px;
   margin: 5px;
+}
+
+.shadow {
+  box-shadow: 10px 10px rgb(80,27,29, .8);
 }
 
 
