@@ -2,7 +2,7 @@ nav {
   overflow: hidden;
   position: fixed;
   top : 0;
-  z-index : 0;
+  z-index : 1;
   background-color: #501B1D;
   padding : 1.5em;
   width: 100%;
