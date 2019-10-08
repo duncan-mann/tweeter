@@ -30,6 +30,11 @@ main {
   margin: auto;
 
 }
+
+main.container h2 {
+  font-weight: 300;
+  margin-left: 5%;
+}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */

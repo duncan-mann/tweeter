@@ -1,0 +1,131 @@
+
+section h2 {
+  width: 90%;
+  height: 2em;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid black; */
+
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.container form textarea {
+  width: 90%;
+  height: 40px;
+  margin: auto;
+  border: none;
+  border-bottom: 3px solid grey;
+  background-color: transparent;
+}
+
+.formInput {
+  font-family: "Bungee", sans-serif;
+  font-size: 0.75em;
+  margin: auto;
+  padding-top: 10px;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.container form input {
+  padding-top: 4px;
+  margin-right: auto;
+
+  color: #FFFFFF;
+  background-color: #64485C;
+}
+
+.container form textarea, select {
+ outline: none;
+}
+
+section.new-tweet {
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 20px;
+  /* margin: auto; */
+  height: 165px;
+  border: 2px solid #545149;
+  border-radius: 5px;
+}
+
+article.tweet header {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+  height: 58px;
+  background-image: none;
+  background-color: transparent;
+}
+
+article.tweet header h4 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  margin-top: 1.2em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  font-size: 20px;
+}
+
+article.tweet p {
+  font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-left: 1.5em;
+}
+
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  height: 50px;
+  width: 95%;
+  margin: auto;
+  border: none;
+  border-top: 2px solid #545149
+}
+
+article.tweet footer p {
+  margin-left: 0;
+  font-size: 10px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #545149;
+}
+
+article.tweet img {
+  margin-left: 0.75em;
+  margin-top: 0.75em;
+  height: 40px;
+}
+
+article.tweet footer div {
+  align-self: flex-end;
+}
+
+article.tweet footer div img {
+  height: 15px;
+  margin: 5px;
+}
+
+
+
+
+

@@ -2,6 +2,12 @@ header {
   margin-top: 120px;
   height: 400px;
   width: 100%;
+  background-image: url(../images/cartographer.png);
+  background-color: #ADADAD;
+}
+
+header h2 {
+  color: #FFFFFF
 }
 
 div {
@@ -9,9 +15,8 @@ div {
   justify-content: center;
 }
 
-body {
-  background-image: url(../images/cartographer.png);
-  background-color: lightblue;
+div img {
+  margin-top: 10px;
 }
 
 
