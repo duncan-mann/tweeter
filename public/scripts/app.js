@@ -76,6 +76,16 @@ renderTweets(data);
 $('.tweetForm').submit( async function(event) {
   event.preventDefault();
   let text = $(this).serialize();
+  let textInput = text.slice(5,text.length);
+  console.log('textInput ->', textInput.length)
+
+  if (textInput.length === 0) {
+    alert('Must enter a tweet!');
+    return;
+  } else if (textInput.length > 140) {
+    alert('Tweet must be less than 140 characters!');
+    return;
+  }
   
   try {
       const response = await $.ajax({
