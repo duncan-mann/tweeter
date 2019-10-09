@@ -62,7 +62,7 @@ const renderTweets = function(tweets) {
   for (each of tweets) {
     let article = createTweetElement(each);
     let section = document.getElementsByClassName('new-tweet');
-    $(section).append(article);
+    $(section).prepend(article);
   }
 }
 
@@ -72,6 +72,18 @@ renderTweets(data);
 //   event.preventDefault();
 // });
 
+let getTweets = async function() {
+    
+  await $.ajax({
+  url: '/tweets/',
+  type: 'GET',
+  data : data,
+  dataType: 'JSON'
+}).then( (data)=> {
+  renderTweets(data);
+})
+}
+getTweets();
 
 $('.tweetForm').submit( async function(event) {
   event.preventDefault();
@@ -94,24 +106,14 @@ $('.tweetForm').submit( async function(event) {
         data: text,
         dataType: 'JSON'
       })
+
   } catch (error) {
     console.error(error)
     }
+    getTweets();
+    document.getElementById('textArea').value = '';
   })
 
-
-  let getTweets = async function() {
-    
-      await $.ajax({
-      url: '/tweets/',
-      type: 'GET',
-      data : data,
-      dataType: 'JSON'
-    }).then( (data)=> {
-      renderTweets(data);
-    })
-  }
-  getTweets();
 
 // const loadTweets = async function() {
 //   let tweets = await $.get('/tweets/', function(data) {
