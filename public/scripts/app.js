@@ -30,8 +30,14 @@ const data = [
     "created_at": 1461113959088
   }
 ];
+
+const formatDate = function(unix) {
+  let dateObj = new Date(unix);
+  date = dateObj.toUTCString().slice(0,16);
+  return date;
+}
  
-createTweetElement = function(user) {
+const createTweetElement = function(user) {
  let $article = `<article class="tweet ${user.user.name}">
  <header>
       <img src=${user.user.avatars}>
@@ -40,7 +46,7 @@ createTweetElement = function(user) {
     </header>
       <p>${user.content.text}</p>
       <footer>
-      <p>${user.created_at}</p>
+      <p>${formatDate(user.created_at)}</p>
       <div>
         <img src='../images/icons/like.png'>
         <img src='../images/icons/flag.png'>
@@ -61,6 +67,28 @@ const renderTweets = function(tweets) {
 }
 
 renderTweets(data);
+
+// $('form').submit(function(event) {
+//   event.preventDefault();
+// });
+
+
+$('.tweetForm').submit( async function(event) {
+  event.preventDefault();
+  let text = $(this).serialize();
+  
+  try {
+      const response = await $.ajax({
+        url: '/tweets/',
+        type: 'POST',
+        data: text,
+        dataType: 'JSON'
+      })
+  } catch (error) {
+    console.error(error)
+    }
+  })
+
 
 
 });
