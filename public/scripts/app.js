@@ -6,45 +6,52 @@
 $(document).ready(function() {
 
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
+// const data = [
+//   {
+//     "user": {
+//       "name": "Newton",
+//       "avatars": "https://i.imgur.com/73hZDYK.png"
+//       ,
+//       "handle": "@SirIsaac"
+//     },
+//     "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//     "created_at": 1461116232227
+//   },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
+// ];
 
 const formatDate = function(unix) {
   let dateObj = new Date(unix);
   date = dateObj.toUTCString().slice(0,16);
   return date;
 }
+
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
  
 const createTweetElement = function(user) {
+
  let $article = `<article class="tweet ${user.user.name}">
  <header>
       <img src=${user.user.avatars}>
       <h4>${user.user.name}</h4>
       <p class="username">${user.user.handle}</p>
     </header>
-      <p>${user.content.text}</p>
+      <p>${escape(user.content.text)}</p>
       <footer>
       <p>${formatDate(user.created_at)}</p>
       <div>
@@ -59,25 +66,23 @@ return $article;
 }
 
 const renderTweets = function(tweets) {
+  let section = document.getElementsByClassName('new-tweet');
+  $(section).empty();
+
   for (each of tweets) {
     let article = createTweetElement(each);
-    let section = document.getElementsByClassName('new-tweet');
     $(section).prepend(article);
   }
 }
 
-renderTweets(data);
-
-// $('form').submit(function(event) {
-//   event.preventDefault();
-// });
+// renderTweets(tweetData);
 
 let getTweets = async function() {
     
   await $.ajax({
   url: '/tweets/',
   type: 'GET',
-  data : data,
+  data : 'data',
   dataType: 'JSON'
 }).then( (data)=> {
   renderTweets(data);
@@ -113,17 +118,6 @@ $('.tweetForm').submit( async function(event) {
     getTweets();
     document.getElementById('textArea').value = '';
   })
-
-
-// const loadTweets = async function() {
-//   let tweets = await $.get('/tweets/', function(data) {
-//     return data;
-//   })
-//   renderTweets(tweets);
-// }
-
-// loadTweets();
-
 });
 
 
