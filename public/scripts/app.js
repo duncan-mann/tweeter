@@ -90,6 +90,27 @@ $('.tweetForm').submit( async function(event) {
   })
 
 
+  let getTweets = async function() {
+    
+      await $.ajax({
+      url: '/tweets/',
+      type: 'GET',
+      data : data,
+      dataType: 'JSON'
+    }).then( (data)=> {
+      renderTweets(data);
+    })
+  }
+  getTweets();
+
+// const loadTweets = async function() {
+//   let tweets = await $.get('/tweets/', function(data) {
+//     return data;
+//   })
+//   renderTweets(tweets);
+// }
+
+// loadTweets();
 
 });
 
