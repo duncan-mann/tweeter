@@ -84,9 +84,9 @@ let getTweets = async function() {
   type: 'GET',
   data : 'data',
   dataType: 'JSON'
-}).then( (data)=> {
-  renderTweets(data);
-})
+  }).then( (data)=> {
+    renderTweets(data);
+  })
 }
 getTweets();
 
@@ -109,7 +109,6 @@ $('.tweetForm').submit( async function(event) {
         url: '/tweets/',
         type: 'POST',
         data: text,
-        dataType: 'JSON'
       })
 
   } catch (error) {
@@ -118,6 +117,11 @@ $('.tweetForm').submit( async function(event) {
     getTweets();
     document.getElementById('textArea').value = '';
   })
+
+    $('.arrow').click( function() {
+      $('#scroll').slideToggle('slow');
+    });
+
 });
 
 

@@ -28,10 +28,16 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
+      <div>
+        <p><span>Write</span> a new tweet!</p>
+        <span class='arrow'>
+            <img src='/images/avatars/angle-double-down-solid.svg' type='click'>
+        </span>
+      </div>
     </nav>
     <header>
       <div>
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/profile-hex.png">
       </div>
       <div>
           <h2>Duncan Mann</h2>
@@ -40,8 +46,8 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-       <h2>Compose Tweet</h2>
-            <form action="/tweets/" method="POST" class="tweetForm">
+      <form action="/tweets/" method="POST" class="tweetForm" id="scroll">
+        <h2>Compose Tweet</h2>
               <textarea name="text" placeholder="What are you humming about?" id="textArea"></textarea>
               <div class="formInput">
                 <input type="submit" value="Tweet">

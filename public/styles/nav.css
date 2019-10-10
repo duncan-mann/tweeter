@@ -1,4 +1,7 @@
 nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   overflow: hidden;
   position: fixed;
   top : 0;
@@ -16,5 +19,67 @@ nav span {
   color: #FFFFFF;
 }
 
+nav div {
+  height: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+nav div p span {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  
+}
+
+nav div p {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: 300;
+}
+
+nav div img {
+  height: 10px;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+nav div div {
+  display: flex;
+  justify-content: center;
+}
 
 
+.arrow img {
+  position: absolute;
+  bottom: 5px;
+  height: 25px;
+  width: 25px;
+  animation-name: sliding-vertically;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  color: white;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+@keyframes sliding-vertically {
+  from {
+    bottom: 5px;
+  }
+
+  25% {
+    bottom: 20px;
+  }
+
+  to {
+    bottom: 5px;
+  }
+}
