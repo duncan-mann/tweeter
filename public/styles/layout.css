@@ -28,7 +28,6 @@ nav {
 main {
   width: 90%;
   margin: auto;
-
 }
 
 main.container h2 {
@@ -38,3 +37,18 @@ main.container h2 {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .error {
+   margin-top: 20px;
+   width: 90%;
+   margin-left: 5%;
+   margin-right: 5%;
+   border: 2px solid red;
+   border-radius: 15px;
+   display: none;
+ }
+
+ .error p {
+   color: red;
+ }
+

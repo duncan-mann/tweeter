@@ -54,21 +54,22 @@ nav div div {
 }
 
 
-.arrow img {
+.arrow {
   position: absolute;
   bottom: 5px;
   height: 25px;
-  width: 25px;
   animation-name: sliding-vertically;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+  background-color: transparent;
   color: white;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: tomato;
+ 
+  cursor: pointer;
 }
 
-button {
-  background-color: transparent;
-  border: none;
-}
 
 @keyframes sliding-vertically {
   from {

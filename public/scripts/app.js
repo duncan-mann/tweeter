@@ -6,30 +6,6 @@
 $(document).ready(function() {
 
 
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ];
 
 const formatDate = function(unix) {
   let dateObj = new Date(unix);
@@ -90,17 +66,30 @@ let getTweets = async function() {
 }
 getTweets();
 
+let errorShown = false; // Use this to detect if error is currently on the page. 
+
 $('.tweetForm').submit( async function(event) {
+
+  // If an error is currently on the page from a previous tweet attempt, clear this when a new tweet is entered.
+  if (errorShown === true) {
+    errorShown = false;
+    $('.error').find('p').text('');
+    $('.error').slideToggle('slow');    
+  }
+
   event.preventDefault();
   let text = $(this).serialize();
   let textInput = text.slice(5,text.length);
-  console.log('textInput ->', textInput.length)
 
   if (textInput.length === 0) {
-    alert('Must enter a tweet!');
+    errorShown = true;
+    $('.error').slideToggle('slow');
+    $('.error').find('p').text('Must enter a tweet!');
     return;
   } else if (textInput.length > 140) {
-    alert('Tweet must be less than 140 characters!');
+    errorShown = true;
+    $('.error').slideToggle('slow');
+    $('.error').find('p').text('Tweet must be less than 140 characters!');
     return;
   }
   
