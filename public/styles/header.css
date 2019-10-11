@@ -1,22 +1,67 @@
-header {
-  margin-top: 120px;
+
+div.header-div header {
+  /* margin-top: 100px; */
   height: 400px;
   width: 100%;
-  background-image: url(../images/cartographer.png);
-  background-color: #ADADAD;
-}
-
-header h2 {
-  color: #FFFFFF
-}
-
-div {
+  background-image: linear-gradient(#7FB2FF 80%, #E8F5FC);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-content: center;
 }
 
-div img {
+div.header-div header h2 {
+  color: #FFFFFF;
+  margin: auto;
+}
+
+div.header-div header div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+div.header-div header div img {
+  height: 9em;
   margin-top: 10px;
+}
+
+@media (min-width: 700px) {
+
+  main header {
+    border-radius: 15px;
+  }
+
+  div.header-div header {
+    background-image: url(../images/cartographer.png);
+    background-color: #7FB2FF;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  div.header-div header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  } 
+
+
+  div.header-div header div img {
+  height: 7em;
+  }
+
+
 }
 
 

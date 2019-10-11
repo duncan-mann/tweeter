@@ -21,7 +21,7 @@ const escape =  function(str) {
  
 const createTweetElement = function(user) {
 
- let $article = `<article class="tweet ${user.user.name}">
+ let $article = `<article class="tweet">
  <header>
       <img src=${user.user.avatars}>
       <h4>${user.user.name}</h4>
@@ -49,9 +49,8 @@ const renderTweets = function(tweets) {
     let article = createTweetElement(each);
     $(section).prepend(article);
   }
+  
 }
-
-// renderTweets(tweetData);
 
 let getTweets = async function() {
     
@@ -73,7 +72,6 @@ $('.tweetForm').submit( async function(event) {
   // If an error is currently on the page from a previous tweet attempt, clear this when a new tweet is entered.
   if (errorShown === true) {
     errorShown = false;
-    $('.error').find('p').text('');
     $('.error').slideToggle('slow');    
   }
 
@@ -105,10 +103,12 @@ $('.tweetForm').submit( async function(event) {
     }
     getTweets();
     document.getElementById('textArea').value = '';
+    $('.counter').text('140');
   })
 
     $('.arrow').click( function() {
       $('#scroll').slideToggle('slow');
+      $('#textArea').focus();
     });
 
 });

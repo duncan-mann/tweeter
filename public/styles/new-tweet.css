@@ -1,6 +1,6 @@
 
-form {
-  display: inline;
+form h2 {
+  margin-top: 15px;
 }
 
 section h2 {
@@ -10,7 +10,7 @@ section h2 {
   margin-top: 15px;
 }
 
-.container {
+.container div.content {
   display: flex;
   flex-direction: column;
   /* border: 2px solid black; */
@@ -18,6 +18,10 @@ section h2 {
 }
 
 .container form {
+  display: none;
+}
+
+.container form div{
   display: flex;
   flex-direction: column;
 
@@ -32,7 +36,7 @@ section h2 {
   background-color: transparent;
 }
 
-.formInput {
+form div.formInput {
   font-family: "Bungee", sans-serif;
   font-size: 0.75em;
   margin: auto;
@@ -69,14 +73,16 @@ article {
   margin-right: 5%;
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 165px;
+  /* height: 165px; */
   border: 2px solid #545149;
   border-radius: 5px;
+  background-color: #FFFFFF;
+  overflow: auto;
 }
 
 article.tweet header {
+  width: 100%;
   display: flex;
-  /* flex-direction: row; */
   margin-top: 0;
   height: 58px;
   background-image: none;
@@ -130,8 +136,17 @@ article.tweet footer div img {
   margin: 5px;
 }
 
-.shadow {
-  box-shadow: 7px 7px #501b1dcc;
+article:hover {
+  box-shadow: 7px 7px #94B0DA
+
+}
+
+article .username {
+  display: none;
+}
+
+article:hover .username {
+  display: inline
 }
 
 article.tweet header p {

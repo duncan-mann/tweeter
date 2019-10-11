@@ -3,6 +3,8 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+
 html {
   box-sizing: border-box;
 }
@@ -16,17 +18,12 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #E8F5FC;  
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
 }
 
-nav {
-  font-family: 'Bungee', sans-serif;
-}
-
 main {
-  width: 90%;
   margin: auto;
 }
 
@@ -34,11 +31,10 @@ main.container h2 {
   font-weight: 300;
   margin-left: 5%;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
 
  .error {
+   padding-top: 30px;
+   padding-bottom: 30px;
    margin-top: 20px;
    width: 90%;
    margin-left: 5%;
@@ -46,9 +42,44 @@ main.container h2 {
    border: 2px solid red;
    border-radius: 15px;
    display: none;
+
+ }
+
+ .error div {
+   display: flex;
+   justify-content: center;
  }
 
  .error p {
+    margin-top: auto;
+    margin-bottom: auto;
    color: red;
  }
 
+ .error i {
+   color: red;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-top: auto;
+   margin-bottom: auto;
+ }
+
+
+@media (min-width: 700px) {
+
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+ 
+  .container .header-div {
+    width: 50%;
+  }
+
+  .container .content {
+    width: 50%;
+    margin-top: 130px;
+    margin-right: 10px;
+    margin-left: auto;
+  }
+}

@@ -1,12 +1,15 @@
 $(document).ready(function() {
 
-  $('.tweet').on('mouseover', function() {
+  $('.tweet').on('mouseover', '.new-tweet', function() {
     $(this).children('header').children('.username').css({ display: 'inline' });
     $(this).addClass('shadow');
+
   });
-  $('.tweet').on('mouseleave', function() {
+  $('.tweet').on('mouseleave','.new-tweet', function() {
     $(this).children('header').children('.username').css({ display: 'none' });
     $(this).removeClass('shadow');
+
+
   });
   
 })
