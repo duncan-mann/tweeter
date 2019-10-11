@@ -15,7 +15,6 @@ The application uses HTML, CSS, JS, jQuery and AJAX on the front-end, and Node, 
 
 ![Screenshot1](https://github.com/duncan-mann/tweeter/blob/master/screenshots/Screen%20Shot%202019-10-10%20at%208.33.12%20PM.png?raw=true)
 
-![Screenshot2](https://github.com/duncan-mann/tweeter/blob/master/screenshots/Screen%20Shot%202019-10-10%20at%208.33.27%20PM.png?raw=true)
 
 ![Screenshot3](https://github.com/duncan-mann/tweeter/blob/master/screenshots/Screen%20Shot%202019-10-10%20at%208.33.44%20PM.png?raw=true)
 
